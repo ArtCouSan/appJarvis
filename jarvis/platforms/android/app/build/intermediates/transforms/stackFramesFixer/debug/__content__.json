@@ -1,0 +1,1 @@
+[{"name":"android.local.jars:sqlite-connector.jar:7996f2fbb784638cb82da9cadada8bbf882f6bf2","index":0,"scopes":["EXTERNAL_LIBRARIES"],"types":["CLASSES"],"format":"JAR","present":true},{"name":"android.local.jars:sqlite-native-driver.jar:2a0a2e63baec75c66549713db3477db5059f566a","index":1,"scopes":["EXTERNAL_LIBRARIES"],"types":["CLASSES"],"format":"JAR","present":true}]

@@ -1,0 +1,8 @@
+{
+  "name": "jarvis",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "app_id": "0df89a3e"
+}

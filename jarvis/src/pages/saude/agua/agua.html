@@ -1,0 +1,52 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Água</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content *ngFor="let saude of lista">
+
+  <ion-label class="meta_titulo">Quantidade que falta para meta</ion-label>
+  <ion-item>
+    <ion-range pin="true" max="saude.meta" color="primary" disabled="disabled" [(ngModel)]="model.agua">
+      <ion-icon range-left small  name="ios-water-outline"></ion-icon>
+      <ion-icon range-right name="ios-water"></ion-icon>
+    </ion-range>
+  </ion-item>
+
+  <ion-label class="meta_titulo">Adicionar água</ion-label>
+  <ion-grid>
+      <ion-row>
+         <ion-col col-6 ><ion-input name="qtnAdd" type="number" [(ngModel)]="qtnAdd" class="input_agua"></ion-input></ion-col>
+         <ion-col col-3><button ion-button (click)="diminuir(qtnAdd, model.agua)" color="danger" block small>-</button></ion-col>
+         <ion-col col-3><button ion-button block (click)="aumentar(qtnAdd, model.agua)" small>+</button></ion-col>
+      </ion-row>
+  </ion-grid>
+
+  <ion-item>
+    <ion-label floating>Meta em ml</ion-label>
+    <ion-input (click)="updateMeta(meta)" name="meta"  [(ngModel)]="model.meta" type="number" ></ion-input>
+    <button ion-button block small>Inserir</button>
+  </ion-item>
+
+  <ion-label class="meta_titulo">
+      Consumido: {{saude.agua}} ml
+  </ion-label>
+
+  <ion-label class="meta_titulo" *ngIf="saude.meta == 0">
+      Falta: Sem meta
+  </ion-label>
+    <ion-label class="meta_titulo" *ngIf="saude.agua < saude.meta">
+        Falta: {{saude.meta - saude.agua}}
+    </ion-label>
+    <ion-label class="meta_titulo" *ngIf="saude.agua == saude.meta && saude.meta != 0">
+      Falta: Meta alcançada, parabens!
+  </ion-label>
+    <ion-label class="meta_titulo" *ngIf="saude.agua > saude.meta && saude.meta != 0 ">
+    Falta: Acima da meta
+  </ion-label>
+
+</ion-content>
